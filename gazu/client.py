@@ -89,8 +89,7 @@ def set_tokens(new_tokens):
         new_tokens (dict): Tokens to use for authentication.
     """
     global tokens
-    tokens = new_tokens
-    return tokens
+    return new_tokens
 
 
 def make_auth_header():

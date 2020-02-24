@@ -186,12 +186,12 @@ class SceneTestCase(unittest.TestCase):
             self.assertEqual(instances[0]["id"], "scene-1-instance-1")
 
     def test_get_asset_instance_by_name(self):
-        instance = {
-            "id": "scene-1-instance-1",
-            "number": "1",
-            "entity_id": "scene-1",
-        }
         with requests_mock.mock() as mock:
+            instance = {
+                "id": "scene-1-instance-1",
+                "number": "1",
+                "entity_id": "scene-1",
+            }
             mock.get(
                 gazu.client.get_full_url(
                     "data/asset-instances?"

@@ -66,8 +66,8 @@ class CastingTestCase(unittest.TestCase):
             self.assertEqual(asset_type["name"], "Asset Type 01")
 
     def test_all_asset_types_for_shot(self):
-        path = "data/shots/shot-01/asset-types"
         with requests_mock.mock() as mock:
+            path = "data/shots/shot-01/asset-types"
             mock.get(
                 gazu.client.get_full_url(path),
                 text='[{"name": "Asset Type 01"}]',
@@ -78,8 +78,8 @@ class CastingTestCase(unittest.TestCase):
             self.assertEqual(asset_type["name"], "Asset Type 01")
 
     def test_all_asset_types_for_project(self):
-        path = "data/projects/project-01/asset-types"
         with requests_mock.mock() as mock:
+            path = "data/projects/project-01/asset-types"
             mock.get(
                 gazu.client.get_full_url(path),
                 text='[{"name": "Asset Type 01"}]',

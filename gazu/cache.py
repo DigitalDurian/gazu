@@ -43,7 +43,6 @@ def remove_oldest_entry(memo, maxsize):
     Returns:
         Oldest entry for given cache.
     """
-    oldest_entry = None
     if maxsize > 0 and len(memo) > maxsize:
         oldest_entry_key = list(memo.keys())[0]
         for entry_key in memo.keys():
@@ -51,7 +50,7 @@ def remove_oldest_entry(memo, maxsize):
             if memo[entry_key]["date_accessed"] < oldest_date:
                 oldest_entry_key = entry_key
         memo.pop(oldest_entry_key)
-    return oldest_entry
+    return None
 
 
 def get_cache_key(args, kwargs):
